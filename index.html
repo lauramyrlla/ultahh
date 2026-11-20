@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Wulan! 🎂</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        creamStart: '#FFF8B0',
+                        creamEnd: '#FFF0C5',
+                        warmText: '#3D311E',
+                        warmMuted: '#6E5A3C',
+                        accentAmber: '#D97706',
+                        accentGold: '#F59E0B',
+                        accentCoral: '#EA580C',
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.6, transform: 'scale(1)' },
+                            '50%': { opacity: 1, transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFF8B0 0%, #FFF0C5 55%, #FFE7A3 100%);
+            color: #3D311E;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Api Lilin */
+        @keyframes flicker {
+            0%, 100% {
+                transform: translateX(-50%) scale(1) rotate(-2deg);
+                box-shadow: 0 0 15px #f59e0b, 0 0 30px #ea580c, 0 0 45px #fde047;
+            }
+            25% {
+                transform: translateX(-50%) scale(1.08, 0.95) rotate(2deg);
+                box-shadow: 0 0 18px #f59e0b, 0 0 35px #ea580c;
+            }
+            50% {
+                transform: translateX(-50%) scale(0.95, 1.05) rotate(-1deg);
+                box-shadow: 0 0 12px #f59e0b, 0 0 25px #ea580c;
+            }
+            75% {
+                transform: translateX(-50%) scale(1.03, 0.98) rotate(3deg);
+                box-shadow: 0 0 20px #f59e0b, 0 0 40px #ea580c;
+            }
+        }
+
+        .candle-flame {
+            position: absolute;
+            top: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 26px;
+            background: radial-gradient(ellipse at bottom, #fef08a 0%, #f59e0b 55%, #ea580c 100%);
+            border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+            animation: flicker 0.8s infinite alternate;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .candle-flame.extinguished {
+            opacity: 0;
+            transform: translateX(-50%) scale(0) translateY(-10px);
+            animation: none;
+        }
+
+        /* Animasi Asap Lilin setelah ditiup */
+        @keyframes smokeRise {
+            0% {
+                opacity: 0.75;
+                transform: translateX(-50%) translateY(0) scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-30%) translateY(-45px) scale(2);
+            }
+        }
+
+        .candle-smoke {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: rgba(120, 98, 68, 0.45);
+            border-radius: 50%;
+            filter: blur(3px);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .candle-smoke.active {
+            animation: smokeRise 1.8s ease-out forwards;
+        }
+
+        /* Kursor Typewriter */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: #D97706;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Frosted Warm Cream Card */
+        .glass-card {
+            background: rgba(255, 253, 242, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(217, 119, 6, 0.22);
+            box-shadow: 0 10px 30px -5px rgba(146, 102, 24, 0.12);
+        }
+
+        /* Bingkai Foto Polaroid Estetik */
+        .polaroid-frame {
+            background: #FFFDF7;
+            padding: 12px 12px 22px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            box-shadow: 0 14px 32px -6px rgba(120, 82, 18, 0.18), 0 4px 10px -2px rgba(120, 82, 18, 0.08);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+        }
+
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.03) translateY(-4px) !important;
+            box-shadow: 0 20px 38px -6px rgba(120, 82, 18, 0.24);
+            z-index: 20;
+        }
+
+        /* Selotip Washi Tape Dekoratif */
+        .washi-tape {
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 78px;
+            height: 22px;
+            background: rgba(245, 158, 11, 0.35);
+            backdrop-filter: blur(2px);
+            border-left: 2px dotted rgba(255, 255, 255, 0.6);
+            border-right: 2px dotted rgba(255, 255, 255, 0.6);
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        /* Carousel Track & Smooth Swipe */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+            touch-action: pan-y;
+        }
+
+        .carousel-track.dragging {
+            transition: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF8B0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E2C675;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C9A84E;
+        }
+
+        /* Animasi Balon Pastel & Sparkles Melayang */
+        @keyframes balloonFloatUp {
+            0% {
+                transform: translate3d(0, 115vh, 0) rotate(-4deg);
+                opacity: 0;
+            }
+            8% {
+                opacity: 0.96;
+            }
+            25% {
+                transform: translate3d(20px, 80vh, 0) rotate(3deg);
+            }
+            50% {
+                transform: translate3d(-18px, 45vh, 0) rotate(-4deg);
+            }
+            75% {
+                transform: translate3d(24px, 12vh, 0) rotate(4deg);
+            }
+            92% {
+                opacity: 0.96;
+            }
+            100% {
+                transform: translate3d(-14px, -28vh, 0) rotate(-3deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes balloonBurstFly {
+            0% {
+                transform: translate3d(0, 110vh, 0) scale(0.85) rotate(-5deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            35% {
+                transform: translate3d(26px, 68vh, 0) scale(1) rotate(5deg);
+            }
+            70% {
+                transform: translate3d(-24px, 22vh, 0) scale(1.02) rotate(-5deg);
+            }
+            90% {
+                opacity: 0.95;
+            }
+            100% {
+                transform: translate3d(16px, -30vh, 0) scale(0.95) rotate(3deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-balloon {
+            position: fixed;
+            bottom: -150px;
+            z-index: 25;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            animation: balloonFloatUp linear infinite;
+            transition: filter 0.2s ease;
+            filter: drop-shadow(0 10px 16px rgba(146, 102, 24, 0.18));
+        }
+
+        .floating-balloon.burst-balloon {
+            animation: balloonBurstFly ease-out forwards;
+        }
+
+        .floating-balloon:hover {
+            filter: drop-shadow(0 14px 22px rgba(217, 119, 6, 0.32)) brightness(1.04);
+        }
+
+        @keyframes balloonPop {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            45% {
+                transform: scale(1.55);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .balloon-popped {
+            animation: balloonPop 0.28s ease-out forwards !important;
+            pointer-events: none;
+        }
+
+        @keyframes popParticleFly {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .pop-particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            pointer-events: none;
+            z-index: 60;
+            animation: popParticleFly 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes sparkleTwinkle {
+            0%, 100% {
+                transform: scale(0.5) rotate(0deg);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.25) rotate(180deg);
+                opacity: 0.9;
+            }
+        }
+
+        .bg-sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+            animation: sparkleTwinkle ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-amber-500 selection:text-white">
+
+    <!-- Container Balon & Sparkles Lucu di Background -->
+    <div id="balloons-container" class="fixed inset-0 pointer-events-none z-[25] overflow-hidden"></div>
+
+    <!-- Tombol Mengambang untuk Menerbangkan Banyak Balon -->
+    <button type="button" onclick="releaseBalloonWave(16)" title="Terbangkan lebih banyak balon!" class="fixed bottom-5 right-5 z-40 px-4 py-3 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-rose-400 hover:from-amber-600 hover:to-rose-500 text-white font-display font-bold text-xs sm:text-sm shadow-xl shadow-orange-500/30 border-2 border-white/80 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer">
+        <span class="text-base sm:text-lg animate-bounce">🎈</span>
+        <span>Terbangkan Banyak Balon!</span>
+    </button>
+
+    <!-- Canvas Konfeti Fullscreen -->
+    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+
+    <!-- Dekorasi Cahaya Latar Belakang Hangat -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-amber-300/35 rounded-full blur-[110px] pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-orange-200/45 rounded-full blur-[110px] pointer-events-none"></div>
+
+    <!-- Kontainer Utama -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16 relative z-10 flex flex-col items-center">
+        
+        <!-- Badge Awal -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs sm:text-sm font-semibold text-amber-800 mb-6 border border-amber-400/40">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+            <span id="badge-platform">Kenal Online sejak SMP Kelas 8 → Sekarang Sama-sama Kelas 12 🎈</span>
+        </div>
+
+        <!-- Judul Utama -->
+        <h1 class="font-display text-3xl sm:text-5xl font-bold text-center tracking-tight mb-3 bg-gradient-to-r from-[#3D311E] via-[#92400E] to-[#D97706] bg-clip-text text-transparent">
+            Happy 19th Birthday, <span id="display-name">Wulan</span>! 🎂🎈
+        </h1>
+        <p class="text-[#6E5A3C] text-center text-sm sm:text-base max-w-md mb-8 font-medium">
+            Dari kenalan online pas SMP kelas 8 sampai sekarang sama-sama kelas 12 — makasih udah selalu ada pas lagi susah!
+        </p>
+
+        <!-- CAROUSEL / SLIDER 4 FOTO WULAN BERGAYA POLAROID -->
+        <div class="relative mb-10 flex flex-col items-center w-full max-w-xs sm:max-w-sm">
+            <div class="polaroid-frame relative w-64 sm:w-72 -rotate-1 select-none">
+                <div class="washi-tape"></div>
+
+                <!-- Badge Nomor Slide (1/4) -->
+                <div id="slide-counter" class="absolute top-5 left-5 z-20 px-2.5 py-0.5 rounded-full bg-[#3D311E]/70 text-[#FFFDF5] text-[10px] font-bold backdrop-blur-xs pointer-events-none">
+                    1 / 4
+                </div>
+
+                <!-- Viewport Slider (4 Foto Langsung Tertanam Pakai <img>) -->
+                <div id="photo-viewport" class="w-full aspect-square rounded-xl overflow-hidden bg-amber-100/70 relative group cursor-grab active:cursor-grabbing">
+                    <div id="photo-track" class="carousel-track w-full h-full">
+                        <!-- Slide 1 -->
+                        <div class="w-full h-full shrink-0" data-caption="Happy 19th Birthday, Wulan! ✨" data-date="Foto 1/4 • Geser ke samping 👉">
+                            <img src="1.jpeg" alt="Foto Wulan 1" draggable="false" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FDE68A/78350F?text=Wulan+19th+1+🎂';" class="wulan-slide-img w-full h-full object-cover select-none">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="w-full h-full shrink-0" data-caption="The prettiest 19-year-old! 🎈💛" data-date="Foto 2/4 • Level 19 Unlocked">
+                            <img src="2.jpeg" alt="Foto Wulan 2" draggable="false" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FED7AA/7C2D12?text=Wulan+19th+2+🎈';" class="wulan-slide-img w-full h-full object-cover select-none">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="w-full h-full shrink-0" data-caption="Selalu bersinar & bahagia terus ya ✨" data-date="Foto 3/4 • Kelas 12 Era">
+                            <img src="3.jpeg" alt="Foto Wulan 3" draggable="false" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FDE047/713F12?text=Wulan+19th+3+🌟';" class="wulan-slide-img w-full h-full object-cover select-none">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="w-full h-full shrink-0" data-caption="Best virtual sister ever! 🥳🎂" data-date="Foto 4/4 • Wishes You All The Best">
+                            <img src="4.jpeg" alt="Foto Wulan 4" draggable="false" onerror="this.onerror=null;this.src='https://placehold.co/500x500/FDBA74/7C2D12?text=Wulan+19th+4+🥳';" class="wulan-slide-img w-full h-full object-cover select-none">
+                        </div>
+                    </div>
+
+                    <!-- Tombol Panah Kiri -->
+                    <button type="button" onclick="prevSlide()" aria-label="Foto sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FFFDF5]/85 hover:bg-[#FFFDF5] text-[#3D311E] shadow-md flex items-center justify-center transition-all opacity-90 sm:opacity-0 sm:group-hover:opacity-100 active:scale-90 cursor-pointer font-bold text-sm">
+                        ‹
+                    </button>
+
+                    <!-- Tombol Panah Kanan -->
+                    <button type="button" onclick="nextSlide()" aria-label="Foto berikutnya" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FFFDF5]/85 hover:bg-[#FFFDF5] text-[#3D311E] shadow-md flex items-center justify-center transition-all opacity-90 sm:opacity-0 sm:group-hover:opacity-100 active:scale-90 cursor-pointer font-bold text-sm">
+                        ›
+                    </button>
+
+                    <!-- Tombol Upload Preview Lokal untuk Slide Aktif -->
+                    <label for="upload-active-photo" title="Coba ganti foto di slide ini dari perangkatmu" class="absolute bottom-2.5 right-2.5 z-20 px-2.5 py-1.5 rounded-lg bg-[#3D311E]/75 hover:bg-[#3D311E] text-[#FFFDF5] text-[11px] font-medium backdrop-blur-sm opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity cursor-pointer flex items-center gap-1 shadow-md">
+                        <span>📷 Ganti Foto</span>
+                    </label>
+                    <input type="file" id="upload-active-photo" accept="image/*" class="hidden" onchange="previewLocalSlidePhoto(event)">
+                </div>
+
+                <!-- Caption & Tanggal Dinamis Sesuai Foto yang Tampil -->
+                <p id="hero-photo-caption" class="font-display text-center text-sm font-bold text-[#3D311E] mt-3.5 px-1 transition-opacity duration-200">
+                    Happy 19th Birthday, Wulan! ✨
+                </p>
+                <p id="hero-photo-date" class="text-center text-[11px] text-[#856F4B] mt-0.5 font-medium">
+                    Foto 1/4 • Geser ke samping 👉
+                </p>
+
+                <!-- Indikator Titik (Dots) -->
+                <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-3">
+                    <!-- Dots di-generate otomatis oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- BAGIAN 1: KUE ULANG TAHUN INTERAKTIF -->
+        <section class="w-full glass-card rounded-3xl p-6 sm:p-10 mb-10 flex flex-col items-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-amber-300/15 to-transparent pointer-events-none"></div>
+            
+            <p id="cake-instruction" class="text-xs sm:text-sm uppercase tracking-widest text-amber-700 font-bold mb-12 text-center">
+                Make a wish dulu, lalu tiup lilinnya! ✨
+            </p>
+
+            <!-- Ilustrasi Kue CSS -->
+            <div class="relative flex flex-col items-center mt-4 mb-8 animate-float select-none">
+                <!-- Lilin -->
+                <div class="relative w-3.5 h-12 bg-gradient-to-b from-amber-100 to-amber-300 border border-amber-400/50 rounded-t-sm shadow-sm z-20 flex flex-col justify-evenly overflow-hidden">
+                    <div class="w-full h-1.5 bg-orange-500/40 -rotate-12"></div>
+                    <div class="w-full h-1.5 bg-orange-500/40 -rotate-12"></div>
+                    <div class="w-full h-1.5 bg-orange-500/40 -rotate-12"></div>
+                </div>
+                <!-- Api & Asap -->
+                <div id="flame" class="candle-flame z-30"></div>
+                <div id="smoke" class="candle-smoke z-30"></div>
+
+                <!-- Layer Atas Kue -->
+                <div class="w-36 sm:w-44 h-12 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 rounded-t-2xl relative shadow-inner z-10 flex items-start justify-around overflow-hidden">
+                    <div class="w-5 h-5 bg-[#FFFDF5] rounded-b-full -mt-1 shadow-xs"></div>
+                    <div class="w-6 h-7 bg-[#FFFDF5] rounded-b-full -mt-1 shadow-xs"></div>
+                    <div class="w-4 h-4 bg-[#FFFDF5] rounded-b-full -mt-1 shadow-xs"></div>
+                    <div class="w-6 h-6 bg-[#FFFDF5] rounded-b-full -mt-1 shadow-xs"></div>
+                    <div class="w-5 h-5 bg-[#FFFDF5] rounded-b-full -mt-1 shadow-xs"></div>
+                </div>
+
+                <!-- Layer Bawah Kue -->
+                <div class="w-48 sm:w-56 h-16 bg-gradient-to-r from-[#78350F] via-[#92400E] to-[#78350F] rounded-t-xl rounded-b-lg border-t-4 border-[#FFFDF5] relative shadow-lg flex items-center justify-center gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-300 shadow-[0_0_8px_#fcd34d]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-300 shadow-[0_0_8px_#fda4af]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-200 shadow-[0_0_8px_#fef08a]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-300 shadow-[0_0_8px_#fcd34d]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-300 shadow-[0_0_8px_#fda4af]"></span>
+                </div>
+
+                <!-- Piring Kue -->
+                <div class="w-60 sm:w-72 h-3 bg-[#E6D5A7] rounded-full mt-0.5 shadow-md border-t border-white/70"></div>
+            </div>
+
+            <!-- Tombol Interaksi Lilin -->
+            <div class="flex flex-wrap items-center justify-center gap-3 z-10">
+                <button type="button" id="blow-btn" onclick="blowCandle()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-amber-500/30 transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+                    <span>🌬️ Tiup Lilin</span>
+                </button>
+                
+                <button type="button" id="relight-btn" onclick="relightCandle()" class="hidden px-5 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200/90 text-amber-900 font-semibold text-sm border border-amber-400/50 transition-all active:scale-95 cursor-pointer">
+                    🔥 Nyalakan Lagi
+                </button>
+            </div>
+        </section>
+
+        <!-- BAGIAN 2: PESAN UCAPAN (TYPEWRITER) -->
+        <section class="w-full glass-card rounded-3xl p-6 sm:p-8 mb-10">
+            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-amber-900/10">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-orange-400 flex items-center justify-center text-lg shadow-sm text-white">
+                    💌
+                </div>
+                <div>
+                    <h2 class="font-display font-bold text-base sm:text-lg text-[#3D311E]">Surat Kecil Buat Wulan</h2>
+                    <p class="text-xs text-[#6E5A3C] font-medium" id="sender-subtitle">Dari teman seperjuanganmu dari kelas 8 sampai kelas 12</p>
+                </div>
+            </div>
+            
+            <div class="min-h-[140px] text-[#3D311E] text-sm sm:text-base leading-relaxed whitespace-pre-line font-normal">
+                <span id="typewriter-text" class="typing-cursor"></span>
+            </div>
+        </section>
+
+        <!-- BAGIAN 3: KOTAK SURAT DIGITAL "OPEN WHEN..." -->
+        <section class="w-full mb-12">
+            <div class="text-center mb-6">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-[#3D311E] mb-2">📦 Kotak Surat "Open When..."</h2>
+                <p class="text-xs sm:text-sm text-[#6E5A3C] font-medium">Klik salah satu amplop di bawah sesuai suasana hatimu nanti ya!</p>
+            </div>
+
+            <!-- Grid Kartu Amplop -->
+            <div id="envelopes-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Di-generate otomatis oleh JavaScript dari konfigurasi -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-xs text-[#856F4B] font-medium pb-6">
+            Dibuat khusus dengan kode & doa terbaik • <span id="footer-year"></span>
+        </footer>
+
+    </main>
+
+    <!-- MODAL POPUP UNTUK SURAT "OPEN WHEN..." -->
+    <div id="letter-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#2A2010]/55 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div id="modal-box" class="bg-gradient-to-br from-[#FFFDF2] via-[#FFF8B0] to-[#FFF0C5] border-2 border-amber-400/60 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-300 relative">
+            
+            <!-- Tombol Close -->
+            <button type="button" onclick="closeModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-amber-900/10 hover:bg-amber-900/20 text-[#3D311E] flex items-center justify-center transition-colors cursor-pointer font-bold">
+                ✕
+            </button>
+
+            <div id="modal-icon" class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl mb-4">
+                ✉️
+            </div>
+
+            <h3 id="modal-title" class="font-display text-lg sm:text-xl font-bold text-[#3D311E] mb-3">
+                Judul Surat
+            </h3>
+
+            <div class="h-px w-full bg-gradient-to-r from-amber-500/40 via-orange-400/30 to-transparent mb-4"></div>
+
+            <p id="modal-body" class="text-[#3D311E] text-sm sm:text-base leading-relaxed whitespace-pre-line mb-6">
+                Isi surat akan muncul di sini...
+            </p>
+
+            <button type="button" onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold text-sm shadow-md shadow-amber-500/20 transition-all cursor-pointer">
+                Tutup Surat
+            </button>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- KONFIGURASI KADO (EDIT BAGIAN INI SESUAI KEINGINANMU)                 -->
+    <!-- ===================================================================== -->
+    <script>
+        const CONFIG = {
+            namaTeman: "Wulan",
+            umur: 19,
+            namaPengirim: "Teman sekelas 12-mu (kenalan sejak SMP kelas 8)",
+            kenalLewat: "Kenal Online sejak SMP Kelas 8 → Sekarang Sama-sama Kelas 12",
+
+            pesanUtama: `Selamat ulang tahun yang ke-19 ya, Wulan! 🎂🎈✨\n\nNggak kerasa banget ya, kita kenal secara online dari zaman aku masih SMP kelas 8, dan sekarang tahu-tahu kita udah sama-sama di kelas 12 aja! Walaupun umur kamu lebih tua setahun dari aku, kamu nggak pernah bikin jarak di antara kita — malah selalu jadi sosok kakak sekaligus sahabat terbaik lewat chat.\n\nMakasih banyak ya Wulan, karena selama ini kamu selalu ada setiap kali aku lagi susah, dan selalu sigap bantu setiap kali aku lagi butuh apapun. Kebaikan dan ketulusan kamu bener-bener berarti banget buat aku.\n\nDi umur 19 tahun ini, semoga semua doa baikmu terkabul, dilancarkan segala urusan kelas 12-nya, sehat terus, dan selalu dikelilingi hal-hal yang bikin kamu bahagia. Jangan lupa tiup lilinnya & pencet balon-balon yang terbang ya! 💛`,
+
+            daftarSurat: [
+                {
+                    judul: "Buka pas kamu lagi capek banget",
+                    ikon: "🔋",
+                    subjudul: "Saat tugas kelas 12 atau hari terasa berat",
+                    isi: "Tarik napas dulu ya, Wulan. Selama ini kamu selalu ada dan kuat buat bantu orang lain, termasuk aku pas lagi susah.\n\nSekarang giliran kamu yang istirahat kalau lagi capek. Nggak apa-apa berhenti sebentar buat isi ulang energi. Aku selalu doain yang terbaik buat kamu!"
+                },
+                {
+                    judul: "Buka pas kamu butuh teman cerita",
+                    ikon: "💬",
+                    subjudul: "Kapanpun kamu butuh tempat bersandar",
+                    isi: "Ingat ya Wulan, kamu nggak pernah sendirian. Kalau selama ini kamu selalu ada setiap kali aku butuh apapun, sekarang giliran aku yang siap dengerin semua cerita kamu lewat chat kapanpun kamu mau.\n\nChat aku aja kapan saja, dari hal paling receh sampai hal paling serius!"
+                },
+                {
+                    judul: "Buka pas lagi overthinking masa depan",
+                    ikon: "🌟",
+                    subjudul: "Di usia 19 tahun & perjuangan kelas 12",
+                    isi: "Selamat datang di kepala 19, Wulan! Wajar banget kalau di kelas 12 dan umur 19 tahun kadang kepikiran banyak hal soal langkah ke depan.\n\nTapi percayalah, orang sebaik dan setulus kamu pasti bakal ketemu jalan yang cerah. Pelan-pelan aja, satu langkah demi satu langkah, kamu pasti bisa!"
+                },
+                {
+                    judul: "Buka pas kangen masa SMP kelas 8",
+                    ikon: "🎈",
+                    subjudul: "Mengingat perjalanan panjang pertemanan kita",
+                    isi: "Lucu ya kalau diingat-ingat, dari zaman kenal online pas aku masih SMP kelas 8 sampai sekarang kita sama-sama kelas 12, ternyata obrolan dan pertemanan kita awet sampai sejauh ini.\n\nMakasih udah bertahan dan tetap jadi Wulan yang baik hati. Sekali lagi, selamat ulang tahun ke-19 ya!"
+                }
+            ]
+        };
+    </script>
+
+    <!-- ===================================================================== -->
+    <!-- LOGIKA INTERAKTIF, AUDIO & ANIMASI (TIDAK PERLU DIUBAH)               -->
+    <!-- ===================================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.title = `Happy ${CONFIG.umur}th Birthday, ${CONFIG.namaTeman}! 🎂🎈`;
+            document.getElementById("display-name").textContent = CONFIG.namaTeman;
+            document.getElementById("badge-platform").textContent = `${CONFIG.kenalLewat} 🎈`;
+            document.getElementById("sender-subtitle").textContent = `Dari ${CONFIG.namaPengirim}`;
+            document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+            initPhotoCarousel();
+            initBalloonsAndSparkles();
+            renderEnvelopes();
+
+            setTimeout(() => {
+                startTypewriter(CONFIG.pesanUtama, "typewriter-text", 26);
+            }, 600);
+        });
+
+        // =================================================================
+        // CAROUSEL 4 FOTO WULAN (SWIPE HP, DRAG MOUSE, PANAH & DOTS)
+        // =================================================================
+        let currentSlideIndex = 0;
+        let slideCount = 0;
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragDeltaX = 0;
+
+        function initPhotoCarousel() {
+            const track = document.getElementById("photo-track");
+            const dotsContainer = document.getElementById("carousel-dots");
+            const slides = track ? Array.from(track.children) : [];
+            slideCount = slides.length;
+            if (!track || !dotsContainer || slideCount === 0) return;
+
+            dotsContainer.innerHTML = "";
+            slides.forEach((_, idx) => {
+                const dot = document.createElement("button");
+                dot.type = "button";
+                dot.setAttribute("aria-label", `Lihat foto ke-${idx + 1}`);
+                dot.className = "h-2 rounded-full transition-all duration-300 cursor-pointer " +
+                    (idx === 0 ? "w-5 bg-amber-600" : "w-2 bg-amber-900/25 hover:bg-amber-900/45");
+                dot.addEventListener("click", () => goToSlide(idx));
+                dotsContainer.appendChild(dot);
+            });
+
+            const viewport = document.getElementById("photo-viewport");
+
+            viewport.addEventListener("pointerdown", (e) => {
+                if (e.target.closest("button") || e.target.closest("label")) return;
+                isDragging = true;
+                dragStartX = e.clientX;
+                dragDeltaX = 0;
+                track.classList.add("dragging");
+            });
+
+            window.addEventListener("pointermove", (e) => {
+                if (!isDragging) return;
+                dragDeltaX = e.clientX - dragStartX;
+                const width = viewport.clientWidth || 1;
+                const baseOffset = -currentSlideIndex * 100;
+                const dragPercent = (dragDeltaX / width) * 100;
+                track.style.transform = `translateX(${baseOffset + dragPercent}%)`;
+            });
+
+            window.addEventListener("pointerup", () => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.classList.remove("dragging");
+
+                if (dragDeltaX < -45) {
+                    nextSlide();
+                } else if (dragDeltaX > 45) {
+                    prevSlide();
+                } else {
+                    goToSlide(currentSlideIndex);
+                }
+                dragDeltaX = 0;
+            });
+
+            goToSlide(0);
+        }
+
+        function goToSlide(index) {
+            if (slideCount === 0) return;
+            currentSlideIndex = ((index % slideCount) + slideCount) % slideCount;
+
+            const track = document.getElementById("photo-track");
+            const slides = Array.from(track.children);
+            const activeSlide = slides[currentSlideIndex];
+
+            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+            const captionEl = document.getElementById("hero-photo-caption");
+            const dateEl = document.getElementById("hero-photo-date");
+            const counterEl = document.getElementById("slide-counter");
+
+            if (activeSlide) {
+                captionEl.textContent = activeSlide.dataset.caption || `Foto Wulan ${currentSlideIndex + 1}`;
+                dateEl.textContent = activeSlide.dataset.date || `Foto ${currentSlideIndex + 1}/${slideCount}`;
+            }
+            if (counterEl) {
+                counterEl.textContent = `${currentSlideIndex + 1} / ${slideCount}`;
+            }
+
+            const dots = Array.from(document.getElementById("carousel-dots").children);
+            dots.forEach((dot, idx) => {
+                dot.className = "h-2 rounded-full transition-all duration-300 cursor-pointer " +
+                    (idx === currentSlideIndex ? "w-5 bg-amber-600" : "w-2 bg-amber-900/25 hover:bg-amber-900/45");
+            });
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlideIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlideIndex - 1);
+        }
+
+        function previewLocalSlidePhoto(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const track = document.getElementById("photo-track");
+            const activeSlide = track && track.children[currentSlideIndex];
+            const img = activeSlide && activeSlide.querySelector("img");
+            if (img) {
+                img.src = URL.createObjectURL(file);
+            }
+        }
+
+        // =================================================================
+        // ANIMASI BALON PASTEL GLOSSY TERBANG & INTERAKSI KLIK MELETUS
+        // =================================================================
+        const BALLOON_PALETTE = [
+            { body: "#FB923C", light: "#FED7AA", dark: "#EA580C" },
+            { body: "#FACC15", light: "#FEF08A", dark: "#CA8A04" },
+            { body: "#F87171", light: "#FECACA", dark: "#DC2626" },
+            { body: "#F472B6", light: "#FBCFE8", dark: "#DB2777" },
+            { body: "#FBBF24", light: "#FEF3C7", dark: "#D97706" },
+            { body: "#A78BFA", light: "#EDE9FE", dark: "#7C3AED" },
+            { body: "#34D399", light: "#D1FAE5", dark: "#059669" }
+        ];
+
+        function createBalloonElement(options = {}) {
+            const color = BALLOON_PALETTE[Math.floor(Math.random() * BALLOON_PALETTE.length)];
+            const leftPos = options.left !== undefined ? options.left : (2 + Math.random() * 90);
+            const duration = options.duration || (11 + Math.random() * 8);
+            const delay = options.delay !== undefined ? options.delay : 0;
+            const scale = options.scale || (0.82 + Math.random() * 0.42);
+            const gradId = `bgrad_${Math.random().toString(36).substring(2, 9)}`;
+
+            const balloon = document.createElement("div");
+            balloon.className = `floating-balloon pointer-events-auto ${options.isBurst ? "burst-balloon" : ""}`;
+            balloon.style.left = `${leftPos}%`;
+            balloon.style.animationDuration = `${duration}s`;
+            balloon.style.animationDelay = `${delay}s`;
+            balloon.style.transform = `scale(${scale})`;
+
+            balloon.innerHTML = `
+                <svg width="64" height="96" viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="${gradId}" cx="35%" cy="30%" r="65%">
+                            <stop offset="0%" stop-color="${color.light}" />
+                            <stop offset="55%" stop-color="${color.body}" />
+                            <stop offset="100%" stop-color="${color.dark}" />
+                        </radialGradient>
+                    </defs>
+                    <ellipse cx="32" cy="34" rx="24" ry="29" fill="url(#${gradId})" />
+                    <ellipse cx="22" cy="22" rx="6" ry="10" transform="rotate(-24 22 22)" fill="rgba(255,255,255,0.45)" />
+                    <polygon points="28,63 36,63 32,59" fill="${color.dark}" />
+                    <path d="M32 63 Q26 75 34 84 T31 95" stroke="#9A7B4F" stroke-width="1.6" fill="none" stroke-linecap="round" />
+                </svg>
+            `;
+
+            balloon.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (balloon.classList.contains("balloon-popped")) return;
+                balloon.classList.add("balloon-popped");
+                spawnPopParticles(e.clientX, e.clientY, color.body);
+                playPopSound();
+                setTimeout(() => balloon.remove(), 300);
+            });
+
+            return balloon;
+        }
+
+        function initBalloonsAndSparkles() {
+            const container = document.getElementById("balloons-container");
+            if (!container) return;
+
+            const totalInitialBalloons = window.innerWidth < 640 ? 9 : 14;
+            for (let i = 0; i < totalInitialBalloons; i++) {
+                const balloon = createBalloonElement({
+                    left: (i * (88 / totalInitialBalloons)) + (Math.random() * 5),
+                    duration: 11 + Math.random() * 7,
+                    delay: -(Math.random() * 14),
+                    scale: 0.8 + Math.random() * 0.4
+                });
+                container.appendChild(balloon);
+            }
+
+            setInterval(() => {
+                const activeBalloons = container.querySelectorAll(".floating-balloon:not(.balloon-popped)").length;
+                if (activeBalloons < 16) {
+                    container.appendChild(createBalloonElement({
+                        duration: 11 + Math.random() * 7,
+                        delay: 0
+                    }));
+                }
+            }, 1900);
+
+            const sparkleSymbols = ["✦", "✧", "⋆", "✨", "💛"];
+            const sparkleCount = window.innerWidth < 640 ? 10 : 18;
+            for (let i = 0; i < sparkleCount; i++) {
+                const sp = document.createElement("div");
+                sp.className = "bg-sparkle text-amber-500/75 select-none";
+                sp.textContent = sparkleSymbols[i % sparkleSymbols.length];
+                sp.style.left = `${Math.random() * 96}%`;
+                sp.style.top = `${Math.random() * 96}%`;
+                sp.style.fontSize = `${12 + Math.random() * 12}px`;
+                sp.style.animationDuration = `${2.2 + Math.random() * 2.5}s`;
+                sp.style.animationDelay = `${Math.random() * 3}s`;
+                document.body.appendChild(sp);
+            }
+        }
+
+        function releaseBalloonWave(count = 16) {
+            const container = document.getElementById("balloons-container");
+            if (!container) return;
+
+            for (let i = 0; i < count; i++) {
+                const balloon = createBalloonElement({
+                    left: 3 + Math.random() * 92,
+                    duration: 5.5 + Math.random() * 3.5,
+                    delay: i * 0.11,
+                    scale: 0.78 + Math.random() * 0.45,
+                    isBurst: true
+                });
+                container.appendChild(balloon);
+                setTimeout(() => balloon.remove(), 9500);
+            }
+        }
+
+        function spawnPopParticles(x, y, mainColor) {
+            const colors = [mainColor, "#F59E0B", "#F472B6", "#34D399", "#A78BFA"];
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement("div");
+                particle.className = "pop-particle";
+                const angle = (Math.PI * 2 * i) / 10 + (Math.random() * 0.3);
+                const dist = 35 + Math.random() * 45;
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                particle.style.backgroundColor = colors[i % colors.length];
+                particle.style.setProperty("--tx", `${Math.cos(angle) * dist}px`);
+                particle.style.setProperty("--ty", `${Math.sin(angle) * dist}px`);
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 600);
+            }
+        }
+
+        function playPopSound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = "sine";
+                osc.frequency.setValueAtTime(520, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.09);
+                gain.gain.setValueAtTime(0.14, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.1);
+            } catch (e) {}
+        }
+
+        // =================================================================
+        // EFEK MENGETIK OTOMATIS (TYPEWRITER)
+        // =================================================================
+        function startTypewriter(text, elementId, speed = 28) {
+            const el = document.getElementById(elementId);
+            el.textContent = "";
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    el.classList.remove("typing-cursor");
+                }
+            }
+            type();
+        }
+
+        // =================================================================
+        // LOGIKA TIUP LILIN, LAGU & KONFETI
+        // =================================================================
+        let candleBlown = false;
+
+        function blowCandle() {
+            if (candleBlown) return;
+            candleBlown = true;
+
+            const flame = document.getElementById("flame");
+            const smoke = document.getElementById("smoke");
+            const blowBtn = document.getElementById("blow-btn");
+            const relightBtn = document.getElementById("relight-btn");
+            const instruction = document.getElementById("cake-instruction");
+
+            flame.classList.add("extinguished");
+            smoke.classList.remove("active");
+            void smoke.offsetWidth;
+            smoke.classList.add("active");
+
+            instruction.innerHTML = `🎉 Yeay! Selamat ulang tahun ke-${CONFIG.umur}, ${CONFIG.namaTeman}! Semoga wish-nya terwujud! 🎈`;
+            instruction.classList.remove("text-amber-700");
+            instruction.classList.add("text-orange-700");
+
+            blowBtn.classList.add("hidden");
+            relightBtn.classList.remove("hidden");
+
+            launchConfetti(4200);
+            releaseBalloonWave(18);
+            playBirthdayChime();
+        }
+
+        function relightCandle() {
+            candleBlown = false;
+            const flame = document.getElementById("flame");
+            const blowBtn = document.getElementById("blow-btn");
+            const relightBtn = document.getElementById("relight-btn");
+            const instruction = document.getElementById("cake-instruction");
+
+            flame.classList.remove("extinguished");
+            instruction.innerHTML = "Make a wish dulu, lalu tiup lilinnya! ✨";
+            instruction.classList.remove("text-orange-700");
+            instruction.classList.add("text-amber-700");
+
+            relightBtn.classList.add("hidden");
+            blowBtn.classList.remove("hidden");
+        }
+
+        function playBirthdayChime() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+                const notes = [
+                    { freq: 392.00, time: 0, dur: 0.22 },
+                    { freq: 392.00, time: 0.25, dur: 0.22 },
+                    { freq: 440.00, time: 0.5, dur: 0.45 },
+                    { freq: 392.00, time: 1.0, dur: 0.45 },
+                    { freq: 523.25, time: 1.5, dur: 0.45 },
+                    { freq: 493.88, time: 2.0, dur: 0.8 }
+                ];
+
+                notes.forEach(n => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = "triangle";
+                    osc.frequency.setValueAtTime(n.freq, ctx.currentTime + n.time);
+
+                    gain.gain.setValueAtTime(0.001, ctx.currentTime + n.time);
+                    gain.gain.exponentialRampToValueAtTime(0.15, ctx.currentTime + n.time + 0.03);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + n.time + n.dur);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start(ctx.currentTime + n.time);
+                    osc.stop(ctx.currentTime + n.time + n.dur + 0.02);
+                });
+            } catch (e) {}
+        }
+
+        // =================================================================
+        // RENDER KARTU "OPEN WHEN..." & MODAL POPUP
+        // =================================================================
+        function renderEnvelopes() {
+            const grid = document.getElementById("envelopes-grid");
+            grid.innerHTML = "";
+
+            CONFIG.daftarSurat.forEach((surat, index) => {
+                const card = document.createElement("button");
+                card.type = "button";
+                card.className = "glass-card rounded-2xl p-5 text-left hover:border-amber-500/60 hover:bg-[#FFFDF5]/90 transition-all duration-300 group cursor-pointer flex items-start gap-4 hover:-translate-y-1";
+                card.onclick = () => openModal(index);
+
+                card.innerHTML = `
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400/25 to-orange-400/20 border border-amber-500/30 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                        ${surat.ikon}
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-sm sm:text-base text-[#3D311E] group-hover:text-amber-800 transition-colors">
+                                ${surat.judul}
+                            </h3>
+                            <span class="text-xs text-amber-700 font-semibold group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                        <p class="text-xs text-[#6E5A3C] mt-1 line-clamp-2">
+                            ${surat.subjudul}
+                        </p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(index) {
+            const surat = CONFIG.daftarSurat[index];
+            const modal = document.getElementById("letter-modal");
+            const modalBox = document.getElementById("modal-box");
+
+            document.getElementById("modal-icon").textContent = surat.ikon;
+            document.getElementById("modal-title").textContent = surat.judul;
+            document.getElementById("modal-body").textContent = surat.isi;
+
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modalBox.classList.remove("scale-95");
+                modalBox.classList.add("scale-100");
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("letter-modal");
+            const modalBox = document.getElementById("modal-box");
+
+            modal.classList.add("opacity-0");
+            modalBox.classList.remove("scale-100");
+            modalBox.classList.add("scale-95");
+
+            setTimeout(() => {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }, 280);
+        }
+
+        document.getElementById("letter-modal").addEventListener("click", (e) => {
+            if (e.target.id === "letter-modal") closeModal();
+        });
+
+        // =================================================================
+        // ANIMASI KONFETI (PURE HTML5 CANVAS)
+        // =================================================================
+        const canvas = document.getElementById("confetti-canvas");
+        const ctx = canvas.getContext("2d");
+        let confettiPieces = [];
+        let confettiAnimationId = null;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        const CONFETTI_COLORS = ["#F59E0B", "#EA580C", "#EC4899", "#10B981", "#8B5CF6", "#EAB308"];
+
+        function launchConfetti(duration = 3500) {
+            confettiPieces = [];
+            const count = 140;
+
+            for (let i = 0; i < count; i++) {
+                confettiPieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    w: 7 + Math.random() * 7,
+                    h: 4 + Math.random() * 6,
+                    color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+                    speedY: 2.5 + Math.random() * 4.5,
+                    speedX: -2 + Math.random() * 4,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: -6 + Math.random() * 12,
+                    opacity: 1
+                });
+            }
+
+            if (confettiAnimationId) cancelAnimationFrame(confettiAnimationId);
+
+            const startTime = Date.now();
+
+            function renderConfetti() {
+                const elapsed = Date.now() - startTime;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                confettiPieces.forEach(p => {
+                    p.y += p.speedY;
+                    p.x += p.speedX + Math.sin(p.y * 0.02) * 0.8;
+                    p.rotation += p.rotationSpeed;
+
+                    if (elapsed > duration - 800) {
+                        p.opacity = Math.max(0, (duration - elapsed) / 800);
+                    }
+
+                    ctx.save();
+                    ctx.globalAlpha = p.opacity;
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    ctx.restore();
+                });
+
+                confettiPieces = confettiPieces.filter(p => p.y < canvas.height + 20 && p.opacity > 0);
+
+                if (elapsed < duration && confettiPieces.length > 0) {
+                    confettiAnimationId = requestAnimationFrame(renderConfetti);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+
+            renderConfetti();
+        }
+    </script>
+</body>
+</html>
